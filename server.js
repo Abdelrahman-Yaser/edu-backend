@@ -32,7 +32,7 @@ app.use('/courses',courseRouter ); // Post-related routes
 app.use('/articales',articalRouter ); // Post-related routes
 
 
-// MongoDB connection events
+// MongoDB connection events ..
 mongoose.connection.once('open', () => {
     console.log('MongoDB connection established');
     app.listen(PORT, () => {
