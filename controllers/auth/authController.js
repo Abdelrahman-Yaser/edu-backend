@@ -1,5 +1,5 @@
 import User from "../../models/user.js"; // User model for database operations
-import bcrypt from "bcrypt"; // Library for hashing passwords
+import bcrypt from "bcryptjs"; // Library for hashing passwords
 import jwt from "jsonwebtoken"; // Library for token generation
 import dotenv from "dotenv";
 
