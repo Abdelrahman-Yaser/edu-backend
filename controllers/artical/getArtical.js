@@ -2,9 +2,9 @@ import Artical from "../../models/articales.js";
 
 const getArticales = async (req, res) => {
     try {
-        const articales = await Artical.find().sort({ createdAt: -1 }); // Sort by creation date in descending order
-        if (!courses.length) {
-            return res.status(404).json({ success: false, message: "No courses found." });
+        const articales = await Artical.find().sort({ createdAt: -1 });
+        if (!articales.length) {
+            return res.status(404).json({ success: false, message: "No articles found." });
         }
         res.status(200).json({ success: true, articales });
     } catch (error) {
@@ -12,5 +12,4 @@ const getArticales = async (req, res) => {
         res.status(500).json({ success: false, message: "Internal server error." });
     }
 };
-
-export default getArticales;
+ export default getArticales;
