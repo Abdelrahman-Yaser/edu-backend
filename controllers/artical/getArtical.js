@@ -1,6 +1,6 @@
 import Artical from "../../models/articales.js";
 
-const getArticales = async (req, res) => {
+export const getArticales = async (req, res) => {
     try {
         const articales = await Artical.find().sort({ createdAt: -1 });
         if (!articales.length) {
@@ -12,4 +12,16 @@ const getArticales = async (req, res) => {
         res.status(500).json({ success: false, message: "Internal server error." });
     }
 };
- export default getArticales;
+ export const getArtical = async (req, res) => {
+    try {
+        const { id } = req.params;
+        const artical = await Artical.findById(id);
+        if (!artical) {
+            return res.status(404).json({ success: false, message: "Article not found." });
+        }
+        res.status(200).json({ success: true, artical });
+    } catch (error) {
+        console.error(error);
+        res.status(500).json({ success: false, message: "Internal server error." });
+    }
+}

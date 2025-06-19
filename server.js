@@ -29,7 +29,7 @@ app.use('/', rootRouter);
 app.use('/auth',userRouter ); // Authentication routes
 app.use('/posts', postRouter); // Post-related routes postRouter
 app.use('/courses',courseRouter ); // Post-related routes
-app.use('/articales',articalRouter ); // Post-related routes
+app.use('/articles',articalRouter ); // Post-related routes
 
 
 // MongoDB connection events ..
